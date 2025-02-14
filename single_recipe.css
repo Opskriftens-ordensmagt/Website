@@ -1,0 +1,47 @@
+/*************** skal slettes senere *********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+/*************** slut *********************/
+
+main {
+  background-color: #e5d7bd;
+}
+.recipe_card {
+  margin: 20px;
+  background-color: rgba(248, 248, 248, 1);
+  transition: 0.3s;
+}
+
+.recipe_card img {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+.recipe_card .text {
+  padding: 20px;
+}
+
+.recipe_card:hover {
+  background-color: rgb(241, 240, 233);
+}
+
+.orange_box {
+  background-color: #ffb996;
+  padding: 20px;
+}
+
+.light {
+  color: #5e5e5e;
+}
+.info {
+  margin: 20px;
+}
