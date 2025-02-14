@@ -12,9 +12,15 @@ img {
   padding-bottom: 0;
 }
 /*************** slut *********************/
-
+.single_recipe img {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
 main {
   background-color: #e5d7bd;
+  color: rgba(19, 92, 87, 1);
+  font-size: 20px;
+  font-family: sans-serif;
 }
 .recipe_card {
   margin: 20px;
@@ -36,7 +42,8 @@ main {
 
 .orange_box {
   background-color: #ffb996;
-  padding: 20px;
+  margin: 50px 0px;
+  padding: 50px;
 }
 
 .light {
@@ -44,4 +51,35 @@ main {
 }
 .info {
   margin: 20px;
+}
+
+ul,
+ol {
+  margin: 10px 0 50px 0;
+}
+li {
+  margin: 20px 0;
+}
+
+a {
+  margin: 5px;
+  color: #5e5e5e;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.other_dishes h2 {
+  margin: 20px;
+}
+@media only screen and (min-width: 800px) {
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .grid_1-1-1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
