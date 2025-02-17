@@ -1,0 +1,155 @@
+/* Farver */
+html {
+  --baggrundsfarve: #e5d7bd;
+  --laksefarve: #ff9b69;
+  --fontfarve: #135c57;
+}
+
+@font-face {
+  font-family: "satoshi";
+  src: url("../fonts/Satoshi-Variable.woff2") format("woff2"), url("../fonts/Satoshi-Variable.woff") format("woff"), url("../fonts/Satoshi-Variable.ttf") format("truetype");
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+body {
+  background-color: var(--baggrundsfarve);
+}
+
+h1 {
+  font-family: "satoshi";
+  color: var(--fontfarve);
+  font-weight: 600;
+  font-size: 7cqw;
+  margin: 10px;
+}
+
+p {
+  font-family: "Hedvig Letters Serif", serif;
+  color: var(--fontfarve);
+  font-weight: medium;
+  font-size: 2.5cqw;
+}
+
+.storp {
+  font-size: 4cqw;
+  margin-left: 10px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  margin-left: 10px;
+}
+
+h1 {
+  grid-column: 1/3;
+}
+
+.kategori {
+  background-color: var(--laksefarve);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  max-width: none;
+}
+
+h2 {
+  grid-column: 1/3;
+  font-family: "satoshi";
+  color: var(--fontfarve);
+  padding-top: 40px;
+  font-size: 5cqw;
+  font-weight: 600;
+}
+
+.kategori a img {
+  border-radius: 10000px;
+}
+
+.kategori a {
+  text-decoration: none;
+  color: var(--fontfarve);
+  font-family: "satoshi";
+  text-align: center;
+  font-weight: 600;
+}
+
+.aboutmecontainer {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  padding-left: 20px;
+  padding-right: 20px;
+  gap: 30px;
+  padding-bottom: 40px;
+}
+
+.aboutmecontainer img {
+  padding-top: 50px;
+}
+
+.aboutme {
+  display: grid;
+  gap: 20px;
+}
+
+.forsidesalatdesk {
+  display: none;
+}
+
+@media screen and (min-width: 800px) {
+  .forsidesalatdesk {
+    display: block;
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+  .forsidesalat {
+    display: none;
+  }
+  .hero {
+    grid-template-columns: 5fr 5fr;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-left: 80px;
+    padding-right: 30px;
+  }
+  h1 {
+    grid-column: 1/2;
+    font-size: 3.5cqw;
+    align-self: end;
+  }
+  .storp {
+    grid-column: 1/2;
+    grid-row: 2;
+    font-size: 2cqw;
+  }
+  .kategori {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-bottom: 80px;
+    column-gap: 120px;
+    padding-top: 20px;
+  }
+
+  h2 {
+    grid-column: 1/5;
+    font-size: 3cqw;
+  }
+  .kategori a {
+    font-size: 2cqw;
+  }
+  .aboutmecontainer {
+    grid-template-columns: 3fr 1fr;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+  }
+  p {
+    font-size: 1.5cqw;
+    line-height: 3cqw;
+  }
+}
