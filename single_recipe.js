@@ -42,10 +42,7 @@ fetch(`https://dummyjson.com/recipes/${productId}`)
       </div>
       `;
 
-    // const queryString = window.location.search;
-    // const urlParams = new URLSearchParams(queryString);
-    // const categories = urlParams.get("categories");
-
+    // other dishes in same category
     document.querySelector(".h2").innerHTML = `<h2>Other ${data.cuisine} dishes:</h2>`;
 
     const otherProducts = document.querySelector("#other");
@@ -58,15 +55,12 @@ fetch(`https://dummyjson.com/recipes/${productId}`)
       const markup = products.recipes
         .map(
           (product) => `
-<a href="single_recipe.html?id=${product.id}"  class="recipe_card">
-
-            <img src="https://cdn.dummyjson.com/recipe-images/${product.id}.webp" alt="${product.name}" />   
-      <p class="light">${product.cookTimeMinutes + product.prepTimeMinutes} Minutes</p>
-      <h3>${product.name}</h3>
-      <p class="light">${product.mealType}</p>
-
-
-</a>`
+      <a href="single_recipe.html?id=${product.id}"  class="recipe_card">
+      <img src="https://cdn.dummyjson.com/recipe-images/${product.id}.webp" alt="${product.name}" />   
+      <p class="light text">${product.cookTimeMinutes + product.prepTimeMinutes} Minutes</p>
+      <h3 class="text">${product.name}</h3>
+      <p class="light text">${product.mealType}</p>
+      </a>`
         )
         .join("");
       otherProducts.innerHTML = markup;
