@@ -11,3 +11,23 @@ img {
   padding-top: 0;
   padding-bottom: 0;
 }
+/*Header*/
+.top-bar {
+  background-color: #ff9b69;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.logo img {
+  width: 120px; /* Adjust as needed */
+  height: auto;
+  display: block;
+  margin-left: 1rem;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 30px;
+}
