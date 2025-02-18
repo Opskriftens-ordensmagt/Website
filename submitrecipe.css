@@ -6,6 +6,10 @@ html {
 
 body {
   background-color: var(--baggrundsfarve);
+}
+
+main {
+  background-color: var(--baggrundsfarve);
   max-width: 1600px;
   margin: 0 auto;
 }
