@@ -11,6 +11,10 @@ body {
   font-display: swap;
   font-style: normal;
 }
+a {
+  text-decoration: none;
+  color: black;
+}
 h1 {
   margin: 30px;
   color: #114b21;
