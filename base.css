@@ -31,6 +31,7 @@ nav a {
   text-decoration: none;
   margin-right: 30px;
 }
+
 /*Footer*/
 .bottom-bar {
   background-color: #ff9b69;
@@ -40,7 +41,11 @@ nav a {
   align-items: center;
   padding: 10px;
 }
-.icons img {
-  max-height: 70px;
+.icons-container {
+  display: flex;
+  margin-left: auto; /* Pushes icons to the end */
+}
+.icons {
+  max-width: 70px;
   margin-right: 1rem;
 }
