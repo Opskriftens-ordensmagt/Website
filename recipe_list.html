@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,88 +8,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap" rel="stylesheet" />
+
     <title>Recipe List</title>
   </head>
   <body>
     <header>
-      <div class="top-bar">
-        <a class="logo" href="index.html"><img src="img/letmecook-logo.svg" alt="" /></a>
-        <nav>
-          <a href="index.html">Home</a>
-          <a href="recipe_list.html">Recipes</a>
-          <a href="submit_recipe.html">Submit a recipe</a>
-        </nav>
-      </div>
+      <a class="logo" href="index.html"><img src="img/letmecook-logo.svg" alt="" /></a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="recipe_list.html">Recipes</a>
+        <a href="submit_recipe.html">Submit a recipe</a>
+      </nav>
     </header>
     <main>
-      <h1>Dinner</h1>
-      <div class="recipe-container">
-        <div class="recipe">
-          <a href="single_recipe.html"> <img src="https://cdn.dummyjson.com/recipe-images/4.webp" alt="Chicken Alfredo Pasta" /></a>
-          <div class="recipe-info">
-            <p>25 min</p>
-            <h3>Chicken Alfredo Pasta</h3>
-            <p>Dinner</p>
-          </div>
-        </div>
-        <div class="recipe">
-          <a href="single_recipe.html"> <img src="https://cdn.dummyjson.com/recipe-images/10.webp" alt="Tomato Basil Bruschetta" /></a>
-          <div class="recipe-info">
-            <p>30 min</p>
-            <h3>Tomato Basil Bruschetta</h3>
-            <p>Dinner</p>
-          </div>
-        </div>
-        <div class="recipe">
-          <a href="single_recipe.html"> <img src="https://cdn.dummyjson.com/recipe-images/9.webp" alt="Caprese Salad" /></a>
-          <div class="recipe-info">
-            <p>15 min</p>
-            <h3>Caprese Salad</h3>
-            <p>Dinner</p>
-          </div>
-        </div>
-        <div class="recipe">
-          <a href="single_recipe.html"> <img src="https://cdn.dummyjson.com/recipe-images/9.webp" alt="Caprese Salad" /></a>
-          <div class="recipe-info">
-            <p>15 min</p>
-            <h3>Caprese Salad</h3>
-            <p>Dinner</p>
-          </div>
-        </div>
-      </div>
-      <h1>Breakfast</h1>
-      <div class="recipe-container">
-        <div class="recipe">
-          <a href="single_recipe.html"><img src="https://cdn.dummyjson.com/recipe-images/4.webp" alt="Chicken Alfredo Pasta" /></a>
-          <div class="recipe-info">
-            <p>25 min</p>
-            <h3>Chicken Alfredo Pasta</h3>
-            <p>Dinner</p>
-          </div>
-        </div>
-        <div class="recipe">
-          <a href="single_recipe.html"><img src="https://cdn.dummyjson.com/recipe-images/10.webp" alt="Tomato Basil Bruschetta" /></a>
-          <div class="recipe-info">
-            <p>30 min</p>
-            <h3>Tomato Basil Bruschetta</h3>
-            <p>Dinner</p>
-          </div>
-        </div>
-        <div class="recipe">
-          <a href="single_recipe.html"><img src="https://cdn.dummyjson.com/recipe-images/9.webp" alt="Caprese Salad" /></a>
-          <div class="recipe-info">
-            <p>15 min</p>
-            <h3>Caprese Salad</h3>
-            <p>Dinner</p>
-          </div>
-        </div>
-        <div class="recipe">
-          <a href="single_recipe.html"><img src="https://cdn.dummyjson.com/recipe-images/9.webp" alt="Caprese Salad" /></a>
-          <div class="recipe-info">
-            <p>15 min</p>
-            <h3>Caprese Salad</h3>
-            <p>Dinner</p>
-          </div>
+      <div class="max_width">
+        <h1>Recipes</h1>
+        <!-- filter -->
+        <select id="mealType">
+          <option value="All">All meal types</option>
+        </select>
+        <select id="cuisine">
+          <option value="All">All cuisines</option>
+        </select>
+        <h2>All recipes</h2>
+
+        <div class="recipe-container">
+          <!-- content from recipe_list.js -->
         </div>
       </div>
     </main>

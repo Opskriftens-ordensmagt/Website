@@ -11,9 +11,44 @@ img {
   padding-top: 0;
   padding-bottom: 0;
 }
+/* Farver */
+html {
+  --backgroundColor: #e5d7bd;
+  --primaryColor: #ff9b69;
+  --secondaryColor: #ffb996;
+  --fontColor: #135c57;
+}
+
+/* general css */
+body {
+  font-family: "Hedvig Letters Serif", serif;
+  background-color: var(--backgroundColor);
+}
+main {
+  min-height: 70vh;
+}
+h1 {
+  margin: 2cqw 0;
+  font-family: "satoshi";
+  color: var(--fontColor);
+  font-size: 5cqw;
+  font-weight: 600;
+}
+h2 {
+  margin: 1cqw 0;
+  font-family: "satoshi";
+  color: var(--fontColor);
+  font-size: 3cqw;
+  font-weight: 600;
+}
+.max_width {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
 /*Header*/
-.top-bar {
-  background-color: #ff9b69;
+header {
+  background-color: var(--primaryColor);
   color: white;
   display: flex;
   justify-content: space-between;
@@ -31,7 +66,6 @@ nav a {
   text-decoration: none;
   margin-right: 30px;
 }
-
 /*Footer*/
 .bottom-bar {
   background-color: #ff9b69;
@@ -48,4 +82,7 @@ nav a {
 .icons {
   max-width: 70px;
   margin-right: 1rem;
+}
+
+@media only screen and (min-width: 800px) {
 }
