@@ -34,7 +34,7 @@ function showRecipes(recipes) {
                                     <img src="${recipe.image || "fallback-image.jpg"}" alt="${recipe.name}" />
                                 </a>
                                 <div class="recipe-info">
-                                    <p>${recipe.cookTimeMinutes} min</p>
+                                    <p>${recipe.prepTimeMinutes + recipe.cookTimeMinutes} min</p>
                                     <h3>${recipe.name}</h3>
                                     <p>${category}</p>
                                 </div>
