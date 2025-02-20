@@ -56,12 +56,13 @@ h1 {
 .kategori a {
   display: inline-block;
   text-align: center;
-  padding: 14px;
+
+  margin: 25px;
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 .kategori a:hover {
-  transform: scale(0.9);
+  transform: scale(1.1);
 }
 
 .kategori a img {

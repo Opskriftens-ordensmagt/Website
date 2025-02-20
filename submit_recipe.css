@@ -1,7 +1,7 @@
 html {
   --baggrundsfarve: #e5d7bd;
   --laksefarve: #ff9b69;
-  --fontfarve: #135c57;
+  --fontfarve: #0b2a4b;
 }
 
 body {
@@ -40,14 +40,14 @@ form {
 
 label {
   font-family: "Hedvig Letters Serif", serif;
-  color: var(--fontfarve);
+  color: var(--fontColor);
   font-size: 4cqw;
 }
 
 input {
   height: 50px;
   border-radius: 7px;
-  border: solid var(--fontfarve) 4px;
+  border: solid var(--fontColor) 4px;
   margin-bottom: 30px;
   font-family: "Hedvig Letters Serif", serif;
   font-size: 4cqw;
@@ -61,7 +61,7 @@ button {
   background-color: #ff9b69;
   font-family: "satoshi";
   font-size: 5cqw;
-  color: #135c57;
+  color: var(--fontColor);
   font-weight: 600;
   border-radius: 8px;
   padding-left: 3vw;
@@ -69,7 +69,7 @@ button {
   min-width: 200px;
   justify-self: center;
   border: none;
-  box-shadow: 2px 2px 5px #135c57;
+  box-shadow: 2px 2px 5px var(--fontColor);
 }
 
 .desk {
@@ -127,7 +127,7 @@ button {
     background-color: #ff9b69;
     font-family: "satoshi";
     font-size: 2.5cqw;
-    color: #135c57;
+    color: var(--fontColor);
     font-weight: 600;
     border-radius: 8px;
     padding-left: 3vw;
@@ -135,8 +135,15 @@ button {
     min-width: 200px;
     justify-self: center;
     border: none;
-    box-shadow: 2px 2px 5px #135c57;
+    box-shadow: 2px 2px 5px var(--fontColor);
+    transition: background-color 0.3s ease, transform 0.3s ease;
   }
+
+  button:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 5px var(--fontColor);
+  }
+
   #recipe {
     height: 200px;
   }

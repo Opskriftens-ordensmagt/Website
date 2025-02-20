@@ -25,7 +25,7 @@ html {
   --backgroundColor: #e5d7bd;
   --primaryColor: #ff9b69;
   --secondaryColor: #ffb996;
-  --fontColor: #135c57;
+  --fontColor: #0b2a4b;
 }
 
 /* general css */
@@ -63,21 +63,39 @@ header {
   font-family: "satoshi";
   justify-content: space-between;
   font-weight: 600;
-  font-size: 1.2cqw;
+  font-size: 3cqw;
   align-items: center;
   padding: 10px;
 }
+
+header a:hover {
+  transform: scale(1.2);
+}
+
 .logo img {
   width: 120px; /* Adjust as needed */
   height: auto;
   display: block;
   margin-left: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
 nav a {
-  color: #135c57;
+  color: var(--fontColor);
   text-decoration: none;
   margin-right: 30px;
+  transition: 0.3s;
 }
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
 /*Footer*/
 .bottom-bar {
   background-color: #ff9b69;
@@ -94,19 +112,27 @@ nav a {
 .icons {
   max-width: 70px;
   margin-right: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.icons:hover {
+  transform: scale(1.1);
 }
 
 select {
   font-family: "satoshi";
-  color: #135c57;
+  color: var(--fontColor);
   background-color: #ff9b69;
   font-size: 1.2cqw;
   font-weight: 600;
   border-radius: 5px;
   margin-left: 20px;
   padding: 2px;
-  box-shadow: 1px 1px 5px #135c57;
+  box-shadow: 1px 1px 5px #071b27;
 }
 
 @media only screen and (min-width: 800px) {
+  header {
+    font-size: 1.2cqw;
+  }
 }

@@ -23,7 +23,7 @@
 }
 .recipe-info {
   margin-top: 10px;
-  color: #135c57;
+  color: var(--fontColor);
   font-family: "Hedvig Letters Serif", serif;
 }
 
