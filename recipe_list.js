@@ -1,52 +1,83 @@
-const urlParams = new URLSearchParams(window.location.search);
-const myCategory = urlParams.get("category");
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+let myMealType = urlParams.get("mealType");
+if (myMealType == null) {
+  myMealType = "All";
+}
 
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("https://dummyjson.com/recipes/?limit=0")
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Fetched Recipes:", data.recipes); // Debugging: Log fetched data
-      showRecipes(data.recipes);
-    })
-    .catch((error) => console.error("Error fetching recipes:", error));
-});
+const selectCuisine = document.querySelector("#cuisine");
+const selectMealType = document.querySelector("#mealType");
 
-function showRecipes(recipes) {
-  const categories = ["Breakfast", "Lunch", "Brunch", "Dinner", "Dessert"];
-  const mainContainer = document.querySelector("main");
+selectCuisine.addEventListener("change", filterCuisine);
+selectMealType.addEventListener("change", filterMealType);
 
-  let markup = ""; // Create an empty string to store the HTML
+let recipeContainer = document.querySelector(".recipe-container");
+let allRecipes = [];
 
-  categories.forEach((category) => {
-    // Filter recipes by category
-    const filteredRecipes = recipes.filter((recipe) => recipe.mealType.includes(category));
+let url = `https://dummyjson.com/recipes?limit=0`;
+fetch(url)
+  .then((response) => response.json())
+  .then((data) => {
+    allRecipes = data.recipes;
+    buildCuisineSelect(data.recipes);
+    buildMealTypeSelect(data.recipes);
+    filter("All");
+  });
 
-    if (filteredRecipes.length > 0) {
-      // Add category title and recipe container
-      markup += `
-                <h1>${category}</h1>
-        <div class="recipe-container">
-                    ${filteredRecipes
-                      .map(
-                        (recipe) => `
-                            <div class="recipe">
+function showList(recipes) {
+  document.querySelector("h2").innerHTML = `<h2>${myMealType}</21>`;
+
+  const markup = recipes
+    .map(
+      (recipe) => `<div class="recipe">
                                 <a href="single_recipe.html?id=${recipe.id}">
-                                    <img src="${recipe.image || "fallback-image.jpg"}" alt="${recipe.name}" />
+                                    <img src="${recipe.image}" alt="${recipe.name}" />
                                 </a>
                                 <div class="recipe-info">
                                     <p>${recipe.prepTimeMinutes + recipe.cookTimeMinutes} min</p>
                                     <h3>${recipe.name}</h3>
-                                    <p>${category}</p>
+                                    <p>${recipe.mealType}</p>
                                 </div>
                             </div>
-                        `
-                      )
-                      .join("")}
-                </div>
-            `;
-    }
-  });
+  `
+    )
+    .join("");
+  recipeContainer.innerHTML = markup;
+}
 
-  // Insert the entire HTML into the main container
-  mainContainer.innerHTML = markup;
+// filter
+// cuisine
+function buildCuisineSelect(recipes) {
+  const cuisines = Array.from(new Set(recipes.map((recipe) => recipe.cuisine)));
+  const markup = cuisines.map((cuisine) => ` <option value="${cuisine}">${cuisine}</option>`).join("");
+  selectCuisine.innerHTML = `<option value="All">All cuisine</option> ${markup}`;
+}
+
+function filterCuisine(event) {
+  filter(event.target.value, "All");
+}
+
+function filter(cuisine) {
+  let filtered = allRecipes;
+  if (myMealType != "All") {
+    filtered = filtered.filter((recipe) => recipe.mealType.includes(myMealType));
+  }
+  if (cuisine != "All") {
+    filtered = filtered.filter((recipe) => recipe.cuisine == cuisine);
+  } else {
+    buildCuisineSelect(filtered);
+  }
+  showList(filtered);
+}
+// mealtype
+function buildMealTypeSelect(recipes) {
+  const mealTypes = Array.from(new Set(recipes.flatMap((recipe) => recipe.mealType)));
+  const markup = mealTypes.map((mealType) => ` <option value="${mealType}" ${mealType == myMealType ? "selected" : ""}>${mealType}</option>`).join("");
+  selectMealType.innerHTML = `<option value="All">All meal types</option> ${markup}`;
+}
+
+function filterMealType(event) {
+  myMealType = event.target.value;
+
+  filter("All");
 }

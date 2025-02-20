@@ -1,25 +1,3 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f0dfc8;
-}
-@font-face {
-  font-family: "satoshi";
-  src: url("../fonts/Satoshi-Variable.woff2") format("woff2"), url("../fonts/Satoshi-Variable.woff") format("woff"), url("../fonts/Satoshi-Variable.ttf") format("truetype");
-  font-weight: 300 900;
-  font-display: swap;
-  font-style: normal;
-}
-a {
-  text-decoration: none;
-  color: black;
-}
-h1 {
-  margin: 30px;
-  color: #114b21;
-  margin-left: 3rem;
-}
 .recipe-container {
   display: flex;
   justify-content: center;
@@ -29,10 +7,9 @@ h1 {
   margin-bottom: 1rem;
 }
 .recipe {
-  background-color: #ffb996;
-  border-radius: 8px;
+  background-color: var(--secondaryColor);
   text-align: center;
-  width: 390px;
+  width: 350px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 .recipe:hover {
@@ -40,6 +17,8 @@ h1 {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 .recipe img {
+  aspect-ratio: 16/9;
+  object-fit: cover;
   width: 100%;
 }
 .recipe-info {
@@ -47,11 +26,6 @@ h1 {
 }
 
 @media (max-width: 768px) {
-  .top-bar {
-    flex-direction: column;
-    text-align: center;
-  }
-
   .recipe-container {
     flex-direction: column;
     align-items: center;

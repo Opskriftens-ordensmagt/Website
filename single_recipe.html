@@ -10,29 +10,31 @@
     <!-- link to css documents -->
     <link rel="stylesheet" href="single_recipe.css" />
     <link rel="stylesheet" href="base.css" />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap" rel="stylesheet" />
+
     <title>Opskrift</title>
   </head>
   <body>
     <header>
-      <div class="top-bar">
-        <a class="logo" href="index.html"><img src="img/letmecook-logo.svg" alt="" /></a>
-        <nav>
-          <a href="index.html">Home</a>
-          <a href="recipe_list.html">Recipes</a>
-          <a href="submit_recipe.html">Submit a recipe</a>
-        </nav>
-      </div>
+      <a class="logo" href="index.html"><img src="img/letmecook-logo.svg" alt="" /></a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="recipe_list.html">Recipes</a>
+        <a href="submit_recipe.html">Submit a recipe</a>
+      </nav>
     </header>
     <main class="single_recipe">
-      <div id="bla">
-        <div class="grid_1-2 max_width">
-          <!-- content from single_recipe -->
-        </div>
+      <div id="recipeContainer">
+        <!-- content from single_recipe.js -->
       </div>
       <div class="other_dishes max_width">
         <h2 class="h2">Other recipes in the same category</h2>
-        <div id="other" class="grid_1-1-1">
-          <!-- content from single_recipe -->
+        <div id="other" class="otherDishesContainer">
+          <!-- content from single_recipe.js -->
         </div>
       </div>
     </main>

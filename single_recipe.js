@@ -1,15 +1,15 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const productId = urlParams.get("id");
+const recipeId = urlParams.get("id");
 
-let recipeContainer = document.querySelector("#bla");
-fetch(`https://dummyjson.com/recipes/${productId}`)
+let recipeContainer = document.querySelector("#recipeContainer");
+fetch(`https://dummyjson.com/recipes/${recipeId}`)
   .then((response) => response.json())
   .then((data) => {
     recipeContainer.innerHTML = `
 
     <div class="grid_1-2 max_width">
-        <img src="https://cdn.dummyjson.com/recipe-images/${productId}.webp" alt="${data.productdisplayname} " />
+        <img src="https://cdn.dummyjson.com/recipe-images/${recipeId}.webp" alt="${data.name}" />
         <div class="info">
           <h1>${data.name}</h1>
           <div class="flex">
@@ -23,7 +23,7 @@ fetch(`https://dummyjson.com/recipes/${productId}`)
         </div>
       </div>
 
-      <div class="orange_box">
+      <div class="ingredientsAndInstructions">
         <div class="grid_1-1 max_width">
           <div>
             <h2>Ingredients</h2>
@@ -42,27 +42,30 @@ fetch(`https://dummyjson.com/recipes/${productId}`)
       </div>
       `;
 
+    document.querySelector("title").innerHTML = `${data.name}`;
     // other dishes in same category
     document.querySelector(".h2").innerHTML = `<h2>Other ${data.cuisine} dishes:</h2>`;
 
-    const otherProducts = document.querySelector("#other");
-    fetch(`https://dummyjson.com/recipes/tag/${data.cuisine}?limit=3`)
+    const otherRecipes = document.querySelector("#other");
+    fetch(`https://dummyjson.com/recipes/tag/${data.cuisine}?limit=0`)
       .then((response) => response.json())
       .then((data) => showList(data));
 
-    function showList(products) {
-      console.log(products);
-      const markup = products.recipes
+    function showList(recipes) {
+      console.log(recipes);
+      const markup = recipes.recipes
+        .sort((r) => Math.random() - 0.5)
+        .slice(0, 3)
         .map(
-          (product) => `
-      <a href="single_recipe.html?id=${product.id}"  class="recipe_card">
-      <img src="https://cdn.dummyjson.com/recipe-images/${product.id}.webp" alt="${product.name}" />   
-      <p class="light text">${product.cookTimeMinutes + product.prepTimeMinutes} Minutes</p>
-      <h3 class="text">${product.name}</h3>
-      <p class="light text">${product.mealType}</p>
+          (recipe) => `
+      <a href="single_recipe.html?id=${recipe.id}"  class="recipe_card">
+      <img src="https://cdn.dummyjson.com/recipe-images/${recipe.id}.webp" alt="${recipe.name}" />   
+      <p class=" text">${recipe.cookTimeMinutes + recipe.prepTimeMinutes} Minutes</p>
+      <h3 class="text">${recipe.name}</h3>
+      <p class=" text">${recipe.mealType}</p>
       </a>`
         )
         .join("");
-      otherProducts.innerHTML = markup;
+      otherRecipes.innerHTML = markup;
     }
   });
