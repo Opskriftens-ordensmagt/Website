@@ -27,7 +27,9 @@
   padding: 0px 10px;
   margin: 10px;
 }
-
+.recipe-info p h3 {
+  text-decoration: none;
+}
 @media (max-width: 768px) {
   .recipe-container {
     flex-direction: column;

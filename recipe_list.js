@@ -31,13 +31,13 @@ function showList(recipes) {
     .map(
       (recipe) => `<div class="recipe">
                                 <a href="single_recipe.html?id=${recipe.id}">
-                                    <img src="${recipe.image}" alt="${recipe.name}" />
-                                </a>
-                                <div class="recipe-info">
+                                    <img src="${recipe.image}" alt="photo of ${recipe.name}" />
+                                    <div class="recipe-info">
                                     <p>${recipe.prepTimeMinutes + recipe.cookTimeMinutes} min &#9202;</p>
                                     <h3>${recipe.name}</h3>
                                     <p>${recipe.mealType}</p>
-                                </div>
+                                    </div>
+                                    </a>
                             </div>
   `
     )

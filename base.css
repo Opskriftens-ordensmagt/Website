@@ -29,6 +29,9 @@ html {
 }
 
 /* general css */
+a {
+  text-decoration: none;
+}
 body {
   font-family: "Hedvig Letters Serif", serif;
   background-color: var(--backgroundColor);

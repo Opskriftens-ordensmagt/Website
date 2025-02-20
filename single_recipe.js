@@ -9,7 +9,7 @@ fetch(`https://dummyjson.com/recipes/${recipeId}`)
     recipeContainer.innerHTML = `
 
     <div class="grid_1-2 max_width">
-        <img src="https://cdn.dummyjson.com/recipe-images/${recipeId}.webp" alt="${data.name}" />
+        <img src="https://cdn.dummyjson.com/recipe-images/${recipeId}.webp" alt="photo of ${data.name}" />
         <div class="info">
           <h1>${data.name}</h1>
           <div class="flex">
@@ -59,7 +59,7 @@ fetch(`https://dummyjson.com/recipes/${recipeId}`)
         .map(
           (recipe) => `
       <a href="single_recipe.html?id=${recipe.id}"  class="recipe_card">
-      <img src="https://cdn.dummyjson.com/recipe-images/${recipe.id}.webp" alt="${recipe.name}" />   
+      <img src="https://cdn.dummyjson.com/recipe-images/${recipe.id}.webp" alt="photo of ${recipe.name}" />   
       <p class=" text">${recipe.cookTimeMinutes + recipe.prepTimeMinutes} min &#9202;</p>
       <h3 class="text">${recipe.name}</h3>
       <p class=" text">${recipe.mealType}</p>

@@ -9,6 +9,8 @@ function showList(recipes) {
   for (mealType of mealTypes) {
     images[mealType] = recipes.filter((recipe) => recipe.mealType.includes(mealType))[0].id;
   }
-  const markup = mealTypes.map((mealType) => `<a href="recipe_list.html?mealType=${mealType}"><img src="https://cdn.dummyjson.com/recipe-images/${images[mealType]}.webp" alt="${mealType}" />${mealType}</a>`).join("");
+  const markup = mealTypes
+    .map((mealType) => `<a href="recipe_list.html?mealType=${mealType}"><img src="https://cdn.dummyjson.com/recipe-images/${images[mealType]}.webp" alt="Photo of ${mealType}" />${mealType}</a>`)
+    .join("");
   kategoriContainer.innerHTML = markup;
 }
