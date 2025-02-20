@@ -51,8 +51,7 @@ fetch(`https://dummyjson.com/recipes/${recipeId}`)
       .then((response) => response.json())
       .then((data) => showList(data));
 
-    function showList(recipes) {
-      console.log(recipes);
+    function showList(recipes) {    
       const markup = recipes.recipes
         .sort((r) => Math.random() - 0.5)
         .slice(0, 3)

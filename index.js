@@ -3,6 +3,7 @@ fetch(`https://dummyjson.com/recipes?limit=0`)
   .then((response) => response.json())
   .then((data) => showList(data.recipes));
 
+  
 function showList(recipes) {
   const mealTypes = Array.from(new Set(recipes.flatMap((recipe) => recipe.mealType))).sort();
   let images = {};

@@ -45,7 +45,7 @@ function showList(recipes) {
   recipeContainer.innerHTML = markup;
 }
 
-// filter
+// *****filter*****
 // cuisine
 function buildCuisineSelect(recipes) {
   const cuisines = Array.from(new Set(recipes.map((recipe) => recipe.cuisine)));
@@ -57,6 +57,7 @@ function filterCuisine(event) {
   filter(event.target.value, "All");
 }
 
+//filtrerings funktion.
 function filter(cuisine) {
   let filtered = allRecipes;
   if (myMealType != "All") {

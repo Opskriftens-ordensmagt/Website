@@ -59,13 +59,28 @@ Dette afsnit skal forklare hvad I konkret har arbejde med, for at udvikle websit
 - Filtrering af produkter baseret på brugerens valg.
 - Dynamisk visning af produkter i HTML.
 
+
 Brug korte beskrivelser, som i eksemplerne herover
+
+for at udvikle vores site har vi: 
+- hentet opskrifter fra API.
+- dynamisk visning af opskrifer.
+- filtreret visningen af opskrifter ud fra bruger interaktion.
+- visning af mealtypes som links til filtrering.
+- detajleret visning af bruger valgt  opskrift.
+- vising af lignene opskrifter baseret på kategori
+
 
 # API endpoints
 
 Dette afsnit skal liste de endpoints fra API'et i har benyttet:
 
 - (fx. https://dummyjson.com/products)
+
+brugte API endpoints på sitet
+- https://dummyjson.com/recipes
+- https://dummyjson.com/recipes/id
+
 
 # Dokumentation af Funktion
 
@@ -84,3 +99,43 @@ function voresFunktion(sprog) {
 //hvordan funktionen kaldes:
 voresFunktion("JavaScript");
 ```
+
+
+vores funktion
+funktionen bruges på recipe_list.html
+
+Parametre:
+- funktionen bruger parametre som "recipes" som bliver indlæst 
+
+Returnere:
+- vi har ikke en funktion som der returnere, kun som manipulere data fra json og funktioner.
+
+
+
+```javascript
+//funktionens kode:
+function showList(recipes) {
+  document.querySelector("h2").innerHTML = `<h2>${myMealType}</21>`;
+
+  const markup = recipes
+    .map(
+      (recipe) => `<div class="recipe">
+        <a href="single_recipe.html?id=${recipe.id}">
+          <img src="${recipe.image}" alt="photo of ${recipe.name}" />
+          <div class="recipe-info">
+            <p>${recipe.prepTimeMinutes + recipe.cookTimeMinutes} min &#9202;</p>
+            <h3>${recipe.name}</h3>
+            <p>${recipe.mealType}</p>
+          </div>
+        </a>
+       </div>
+  `
+    )
+    .join("");
+  recipeContainer.innerHTML = markup;
+}
+//funktionen bliver kaldt i slutningen af "function filter(cuisine)"
+  showList(filtered);
+
+```
+
