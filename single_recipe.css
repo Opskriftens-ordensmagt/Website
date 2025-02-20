@@ -48,6 +48,7 @@ main img {
   margin: 20px;
   background-color: var(--secondaryColor);
   transition: background-color 0.3s ease, transform 0.3s ease;
+  color: #135c57;
 }
 .recipe_card:hover {
   transform: scale(1.1);
