@@ -5,9 +5,12 @@ ol {
 li {
   margin: 20px 0;
 }
+
 a {
-  margin: 5px;
   color: #5e5e5e;
+}
+.info a {
+  margin: 5px;
 }
 
 main img {
