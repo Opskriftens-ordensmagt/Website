@@ -34,7 +34,7 @@ function showList(recipes) {
                                     <img src="${recipe.image}" alt="${recipe.name}" />
                                 </a>
                                 <div class="recipe-info">
-                                    <p>${recipe.prepTimeMinutes + recipe.cookTimeMinutes} min</p>
+                                    <p>${recipe.prepTimeMinutes + recipe.cookTimeMinutes} min &#9202;</p>
                                     <h3>${recipe.name}</h3>
                                     <p>${recipe.mealType}</p>
                                 </div>

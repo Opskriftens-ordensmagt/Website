@@ -8,7 +8,6 @@
 }
 .recipe {
   background-color: var(--secondaryColor);
-  text-align: center;
   width: 350px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -25,6 +24,8 @@
   margin-top: 10px;
   color: var(--fontColor);
   font-family: "Hedvig Letters Serif", serif;
+  padding: 0px 10px;
+  margin: 10px;
 }
 
 @media (max-width: 768px) {

@@ -60,7 +60,7 @@ fetch(`https://dummyjson.com/recipes/${recipeId}`)
           (recipe) => `
       <a href="single_recipe.html?id=${recipe.id}"  class="recipe_card">
       <img src="https://cdn.dummyjson.com/recipe-images/${recipe.id}.webp" alt="${recipe.name}" />   
-      <p class=" text">${recipe.cookTimeMinutes + recipe.prepTimeMinutes} Minutes</p>
+      <p class=" text">${recipe.cookTimeMinutes + recipe.prepTimeMinutes} min &#9202;</p>
       <h3 class="text">${recipe.name}</h3>
       <p class=" text">${recipe.mealType}</p>
       </a>`
